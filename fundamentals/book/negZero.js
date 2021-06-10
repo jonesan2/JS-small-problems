@@ -1,0 +1,3 @@
+function isNegZero(val) {
+  
+}

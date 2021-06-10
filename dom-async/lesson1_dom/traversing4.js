@@ -1,0 +1,1 @@
+let thumbs = Array.from(document.querySelectorAll('.thumbcaption')).map((node) => node.textContent);
