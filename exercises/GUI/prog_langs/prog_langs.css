@@ -1,0 +1,35 @@
+body {
+  background-color: #990;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+section {
+  background-color: white;
+  width: 600px;
+  height: auto; 
+  padding: 25px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #990;
+  color: white; 
+  box-shadow: none;
+  border: none;
+  border-radius: 2px;
+}
+
+button:active {
+}
+
+button:hover {
+}
+
+button:focus {
+  outline: 0;
+}

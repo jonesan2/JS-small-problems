@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Manager</title>
+    <link rel="stylesheet" href="stylesheets/contacts.css">
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>Contact Manager</h1>
+        <h2>Using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap</h2>
+      </hgroup>
+    </header> 
+
+    <main>
+      <div class="wipe_under" class="uncovered">
+        <nav>
+          <button class="add_contact">Add Contact</button>
+          <input placeholder="search">
+        </nav>
+        <section id="contacts_list">
+          <button class="add_contact">Add Contact</button>
+        </section>
+      </div>
+      <form class="create_edit_contact">
+        <h3>Create Contact</h3>
+        <fieldset>
+          <dl>
+            <div class="form_line">
+              <dt><label for="name">Full name:</label></dt>
+              <dd><input type="text" name="name" id="name"></dd>
+            </div>
+            <p class="invalid_empty_message">Please enter the name field.</p>
+            <div class="form_line">
+              <dt><label for="email">Email address:</label></dt>
+              <dd><input type="email" name="email" id="email"></dd>
+            </div>
+            <p class="invalid_empty_message">Please enter the email field.</p>
+            <div class="form_line">
+              <dt><label for="phone">Telephone number:</label></dt>
+              <dd><input type="tel" name="phone" id="phone"></dd>
+            </div>
+            <p class="invalid_empty_message">Please enter the phone field.</p>
+            <div class="form_line">
+              <dt><label for="tags">Tags:</label></dt>
+              <dd><select name="tags" id="tags">
+              </select></dd>
+            </div>
+          </dl> 
+          <button type="submit">Submit</button>
+          <button class="cancel">Cancel</button>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <p>Developed by <a href="www.devsaran.com">Devsaran.com</a> and <a href="www.239listing.com">239 Listing Real Estate</a>.</p>
+    </footer>
+
+    <script src="javascripts/contacts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+
+    <script id="contacts" type="text/x-handlebars">
+      {{#each contacts}}
+      {{> contact}}
+      {{/each}}
+    </script>
+
+    <script id="contact" data-type="partial" type="text/x-handlebars">
+      <article>
+        <dl>
+          <dt class="contact_name"></dt>
+          <dd class="contact_name">{{full_name}}</dd>
+          <dt class="phone_number">Phone Number:</dt>
+          <dd class="phone_number">{{phone_number}}</dd>
+          <dt class="email">Email:</dt>
+          <dd class="email">{{email}}</dd>
+          <dt class="tags">Tags:</dt>
+          <dd class="tags">{{tags}}</dd>
+        </dl>
+        <button class="edit_contact">Edit</button>
+        <button class="delete_contact">Delete</button>
+      </article>
+    </script>
+
+    <script id="all_tags" type="text/x-handlebars">
+      {{#each all_tags}}
+      {{> one_tag}}
+      {{/each}}
+    </script>
+
+    <script id="one_tag" data-type="partial" type="text/x-handlebars">
+      <option>{{tag}}</option>
+    </script>
+  </body>
+</html>

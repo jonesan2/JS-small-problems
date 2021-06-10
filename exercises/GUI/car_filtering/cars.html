@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cars for Sale</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="cars.css">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header>
+      <h1>Buy Used Cars</h1>
+      <form>
+        <fieldset>
+          <input type="submit" value="Filter" class="button">
+        </fieldset>
+      </form>
+    </header>
+    <main>
+
+    </main>
+
+    <script id="menus" type="text/x-handlebars">
+      {{#each menus}}
+      <dt><label for="{{this.category}}">{{this.category}}</label></dt>
+      <dd><select name="{{this.category}}" id="{{this.category}}">
+        {{#each options}}
+        {{> menu_option}}
+        {{/each}}
+      </select></dd>
+      {{/each}}
+    </script>
+
+    <script id="menu_option" data-type="partial" type="text/x-handlebars">
+      <option id="{{this.option}}">{{this.option}}</option>
+    </script>
+
+    <script id="car_listing" type="text/x-handlebars">
+      {{#each cars}}
+      <figure>
+        <img src="{{this.image}}"/>
+        <figcaption>
+          {{this.make}} {{this.model}}
+          Year: {{this.year}}
+          Price: ${{this.price}}
+        </figcaption>
+      </figure>
+      <button>Buy</button>
+      {{/each}}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+    <script src="cars.js"></script>
+  </body>
+</html>

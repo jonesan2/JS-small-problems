@@ -1,0 +1,33 @@
+body {
+  background-color: #333355;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+figcaption {
+  color: white;
+  visibility: hidden;
+  position: absolute;
+  background-color: black;
+  z-index: 2;
+}
+
+figure {
+  width: 20vw;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 2vw;
+  position: relative;
+}
+
+img {
+  border: 0.5rem solid white;
+  border-radius: 0.25rem;
+  width: 100%;
+  z-index: 1;
+}
